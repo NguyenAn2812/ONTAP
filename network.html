@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="computer-networks-mid-term-review">Computer Networks Mid-Term Review</h1>
+<h2 id="chapter-1-computer-networks-and-the-internet">Chapter 1: Computer Networks and the Internet</h2>
+<h3 id="basic-concepts">1.1 Basic Concepts</h3>
+<ul>
+<li><strong>End Systems</strong>: Devices at the network’s edge, such as computers, smartphones, and IoT devices, that initiate or terminate data communication.</li>
+<li><strong>Hosts</strong>: Any device with an IP address capable of sending or receiving data over a network, including servers, personal computers, and mobile devices.</li>
+<li><strong>Network Edge</strong>: Comprises end systems and the access networks that connect them to the broader network, including routers, modems, and access points.</li>
+<li><strong>Network Core</strong>: The central part of a network, consisting of high-speed routers and switches that facilitate data transmission across various network segments.</li>
+</ul>
+<h3 id="network-devices-and-cables">1.2 Network Devices and Cables</h3>
+<ul>
+<li><strong>Routers</strong>: Devices that forward data packets between different networks based on their IP addresses, determining optimal paths for data transmission.</li>
+<li><strong>Switches</strong>: Operate at the data link layer to manage and forward frames within a local network, using MAC addresses to direct data to its destination.</li>
+<li><strong>Hubs</strong>: Simple devices that broadcast incoming data to all connected devices in a LAN, operating at the physical layer without filtering traffic.</li>
+</ul>
+<h4 id="types-of-cables">Types of Cables:</h4>
+<ul>
+<li><strong>Twisted-Pair Cables (UTP, STP)</strong>: Consist of pairs of copper wires twisted together to reduce electromagnetic interference; commonly used in Ethernet networks.</li>
+<li><strong>Coaxial Cables</strong>: Feature a central conductor surrounded by insulation and shielding; used in older networks and cable television systems.</li>
+<li><strong>Fiber Optic Cables</strong>: Transmit data as light pulses through glass or plastic fibers, offering high-speed and long-distance communication with immunity to electromagnetic interference.</li>
+</ul>
+<h3 id="lan-vs.-wan">1.3 LAN vs. WAN</h3>
+<h4 id="local-area-network-lan">Local Area Network (LAN):</h4>
+<ul>
+<li><strong>Scope</strong>: Covers a small geographical area, such as a home, office, or building.</li>
+<li><strong>Transmission Medium</strong>: Utilizes Ethernet (wired) or Wi-Fi (wireless) technologies.</li>
+<li><strong>Characteristics</strong>: Offers high data transfer rates with low latency; typically owned and managed by a single organization.</li>
+</ul>
+<h4 id="wide-area-network-wan">Wide Area Network (WAN):</h4>
+<ul>
+<li><strong>Scope</strong>: Spans large geographical areas, such as cities, countries, or continents.</li>
+<li><strong>Transmission Medium</strong>: Employs leased communication lines, satellite links, or public networks like the Internet.</li>
+<li><strong>Characteristics</strong>: Connects multiple LANs; generally slower data transfer rates compared to LANs; often managed by multiple organizations or service providers.</li>
+</ul>
+<h3 id="network-models">1.4 Network Models</h3>
+<h4 id="osi-model-7-layers">OSI Model (7 Layers)</h4>
+<ol>
+<li><strong>Physical Layer</strong>: Handles the transmission of raw bit streams over physical media, including cables and radio frequencies.</li>
+<li><strong>Data Link Layer</strong>: Manages node-to-node data transfer, error detection, and correction; organizes data into frames and handles MAC addressing.</li>
+<li><strong>Network Layer</strong>: Responsible for logical addressing (IP addresses) and routing packets between networks.</li>
+<li><strong>Transport Layer</strong>: Ensures reliable data transfer, error recovery, and flow control between end systems; protocols include TCP and UDP.</li>
+<li><strong>Session Layer</strong>: Establishes, manages, and terminates sessions between applications.</li>
+<li><strong>Presentation Layer</strong>: Translates data between the application layer and the network, handling data encryption, compression, and translation.</li>
+<li><strong>Application Layer</strong>: Provides network services directly to user applications, such as HTTP for web browsing and FTP for file transfers.</li>
+</ol>
+<h4 id="tcpip-model-4-layers">TCP/IP Model (4 Layers)</h4>
+<ol>
+<li><strong>Link (Network Interface) Layer</strong>: Combines the OSI model’s Physical and Data Link layers; handles hardware addressing and local network protocols.</li>
+<li><strong>Internet Layer</strong>: Corresponds to the OSI’s Network layer; manages logical addressing and routing using the IP protocol.</li>
+<li><strong>Transport Layer</strong>: Similar to the OSI Transport layer; ensures end-to-end communication and data integrity using protocols like TCP and UDP.</li>
+<li><strong>Application Layer</strong>: Encompasses the OSI’s Session, Presentation, and Application layers; includes protocols such as HTTP, SMTP, and DNS.</li>
+</ol>
+<h3 id="data-encapsulation">1.5 Data Encapsulation</h3>
+<ul>
+<li><strong>Definition</strong>: The process of wrapping data with protocol-specific headers (and sometimes trailers) as it moves down the layers of the OSI or TCP/IP model before transmission over the network.</li>
+</ul>
+<h4 id="encapsulation-process">Encapsulation Process:</h4>
+<ol>
+<li><strong>Application Layer</strong>: Data generated by applications (e.g., HTTP requests).</li>
+<li><strong>Transport Layer</strong>: Encapsulates data into segments (TCP) or datagrams (UDP), adding source and destination port numbers.</li>
+<li><strong>Network Layer</strong>: Encapsulates segments into packets, adding source and destination IP addresses.</li>
+<li><strong>Data Link Layer</strong>: Encapsulates packets into frames, adding MAC addresses and error-checking information.</li>
+<li><strong>Physical Layer</strong>: Converts frames into bits for transmission over the physical medium.</li>
+</ol>
+<p><strong>Example</strong>: An HTTP request is generated by a web browser (Application Layer), encapsulated into a TCP segment (Transport Layer), then into an IP packet (Network Layer), further into an Ethernet frame (Data Link Layer), and finally transmitted as bits over a physical medium like twisted-pair cable (Physical Layer).</p>
+<h3 id="protocol-data-units-pdus">1.6 Protocol Data Units (PDUs)</h3>
+<p>Each layer of the OSI model has a specific PDU that it processes:</p>
+
+<table>
+<thead>
+<tr>
+<th>OSI Layer</th>
+<th>Protocol Data Unit (PDU)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>Segment (TCP) / Datagram (UDP)</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Packet</td>
+</tr>
+<tr>
+<td>Data Link</td>
+<td>Frame</td>
+</tr>
+<tr>
+<td>Physical</td>
+<td>Bits</td>
+</tr>
+</tbody>
+</table><hr>
+<h2 id="chapter-2-application-layer">Chapter 2: Application Layer</h2>
+<h3 id="application-layer-functions">2.1 Application Layer Functions</h3>
+<p>The Application Layer is the topmost layer in both the OSI and TCP/IP models. It serves as the interface between end-users and the network, facilitating various network services. Key functions include:</p>
+<ul>
+<li><strong>Network Virtual Terminal</strong>: Allows a user to log on to a remote host.​</li>
+<li><strong>File Transfer, Access, and Management (FTAM)</strong>: Enables users to access files in a remote host, retrieve files from a remote computer for use in the local computer, and manage or control files in a remote computer locally.​</li>
+<li><strong>Mail Services</strong>: Provides the basis for email forwarding and storage.​</li>
+<li><strong>Directory Services</strong>: Provides distributed database sources and access for global information about various objects and services.​</li>
+</ul>
+<h3 id="common-application-layer-protocols">2.2 Common Application Layer Protocols</h3>
+<p>Several protocols operate at the application layer, each designed for specific functionalities:</p>
+<ul>
+<li><strong>HTTP (Hypertext Transfer Protocol)</strong>: The foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands.​</li>
+<li><strong>FTP (File Transfer Protocol)</strong>: Used for transferring files between computers on a network. It allows users to upload and download files, manage directories, and perform other file-related operations.​</li>
+<li><strong>SMTP (Simple Mail Transfer Protocol)</strong>: A protocol for sending email messages between servers. Most email systems that send mail over the Internet use SMTP to send messages from one server to another.​</li>
+<li><strong>POP3 (Post Office Protocol 3)</strong>: Used by local email clients to retrieve emails from a remote server over a TCP/IP connection. POP3 downloads emails from the server to the local computer and usually deletes them from the server.​</li>
+<li><strong>IMAP (Internet Message Access Protocol)</strong>: Allows users to access and manipulate their email messages on the server without downloading them to the local computer. This enables management of emails from multiple devices.​</li>
+<li><strong>DNS (Domain Name System)</strong>: Translates human-friendly domain names (like <a href="http://www.example.com">www.example.com</a>) into IP addresses that computers use to identify each other on the network.​</li>
+<li><strong>DHCP (Dynamic Host Configuration Protocol)</strong>: Automatically assigns IP addresses and other network configuration parameters to devices on a network, enabling them to communicate effectively.​</li>
+</ul>
+<h3 id="email-protocols">2.3 Email Protocols</h3>
+<p>Email communication relies on specific protocols to handle the sending, receiving, and accessing of messages:</p>
+<ul>
+<li><strong>SMTP (Simple Mail Transfer Protocol)</strong>: Used for sending emails from a client to a server or between servers. Operates over port 25.​</li>
+<li><strong>POP3 (Post Office Protocol 3)</strong>: Retrieves emails from the server to the local computer, typically removing them from the server after download. Operates over port 110.​</li>
+<li><strong>IMAP (Internet Message Access Protocol)</strong>: Allows users to view and manage emails directly on the mail server, facilitating access from multiple devices. Operates over port 143.​</li>
+<li><strong>HTTP/HTTPS (Hypertext Transfer Protocol / Secure)</strong>: Used by web-based email services (like Gmail, Outlook) to access and manage emails through web browsers.​</li>
+</ul>
+<h3 id="domain-name-system-dns">2.4 Domain Name System (DNS)</h3>
+<p>The Domain Name System (DNS) is a hierarchical and decentralized naming system that translates domain names into IP addresses. Its structure includes:</p>
+<ul>
+<li><strong>Root DNS Servers</strong>: The top-level DNS servers that contain information about top-level domains (TLDs).​</li>
+<li><strong>Top-Level Domains (TLDs)</strong>: The highest level of domain names, such as .com, .org, .net, etc.​</li>
+<li><strong>Authoritative Name Servers</strong>: Servers that hold DNS records for specific domains and respond to queries about them.​</li>
+<li><strong>Local DNS Resolver</strong>: A server within an ISP or organization that caches DNS query results to speed up subsequent requests.​</li>
+</ul>
+<h3 id="file-distribution-models">2.5 File Distribution Models</h3>
+<p>There are two primary models for distributing files over a network:</p>
+<h4 id="client-server-model"><strong>Client-Server Model</strong></h4>
+<ul>
+<li><strong>Structure</strong>: A central server stores files, and clients request access to these files.​</li>
+<li><strong>Characteristics</strong>: The server manages resources and security, ensuring controlled access and centralized management.​</li>
+</ul>
+<h4 id="peer-to-peer-p2p-model"><strong>Peer-to-Peer (P2P) Model</strong></h4>
+<ul>
+<li><strong>Structure</strong>: Each device (peer) acts as both a client and a server, sharing files directly with other peers without a central server.​</li>
+<li><strong>Characteristics</strong>: Offers decentralized resource sharing, scalability, and robustness. Commonly used in file-sharing applications like BitTorrent.</li>
+</ul>
+<h2 id="chapter-3-transport-layer">Chapter 3: Transport Layer</h2>
+<h3 id="comparison-of-osi-and-tcpip-models">3.1 Comparison of OSI and TCP/IP Models</h3>
+<p>The Transport Layer plays a crucial role in both the OSI and TCP/IP models, facilitating end-to-end communication between devices.</p>
+<h4 id="osi-model">OSI Model:</h4>
+<ul>
+<li><strong>Structure</strong>: Comprises seven layers—Physical, Data Link, Network, Transport, Session, Presentation, and Application.</li>
+<li><strong>Transport Layer (Layer 4)</strong>: Ensures reliable data transfer, error detection and correction, and flow control.</li>
+</ul>
+<h4 id="tcpip-model">TCP/IP Model:</h4>
+<ul>
+<li><strong>Structure</strong>: Consists of four layers—Link, Internet, Transport, and Application.</li>
+<li><strong>Transport Layer</strong>: Provides communication services directly to the application processes running on different hosts.</li>
+</ul>
+<h4 id="key-differences">Key Differences:</h4>
+<ul>
+<li><strong>Layer Count</strong>: OSI has 7 layers; TCP/IP has 4 layers.</li>
+<li><strong>Protocol Independence</strong>: OSI is protocol-independent; TCP/IP is designed around standard protocols like TCP and IP.</li>
+<li><strong>Standardization</strong>: OSI serves as a theoretical framework; TCP/IP is practical and widely implemented.</li>
+</ul>
+<h3 id="data-units-in-the-transport-layer">3.2 Data Units in the Transport Layer</h3>
+<p>The Transport Layer uses specific Protocol Data Units (PDUs) to manage data transmission:</p>
+<ul>
+<li><strong>Segment</strong>: Used in TCP communications; a segment is a chunk of data with TCP headers, ensuring reliable transmission.</li>
+<li><strong>Datagram</strong>: Used in UDP communications; a datagram is a self-contained message sent without establishing a connection, suitable for applications where speed is crucial, and occasional data loss is acceptable.</li>
+</ul>
+<h3 id="role-of-the-transport-layer">3.3 Role of the Transport Layer</h3>
+<p>The Transport Layer is responsible for several critical functions:</p>
+<ul>
+<li><strong>End-to-End Communication</strong>: Facilitates direct data transfer between source and destination devices, managing data flow and ensuring complete data exchange.</li>
+<li><strong>Error Recovery</strong>: Detects and corrects errors that occur during data transmission, ensuring data integrity.</li>
+<li><strong>Flow Control</strong>: Manages the rate of data transmission between devices to prevent overwhelming the receiver, ensuring efficient data flow.</li>
+<li><strong>Multiplexing</strong>: Allows multiple applications to transmit data over the network simultaneously by assigning unique port numbers, ensuring data reaches the correct application.</li>
+</ul>
+<h3 id="tcp-vs.-udp">3.4 TCP vs. UDP</h3>
+<p>Two primary protocols operate at the Transport Layer:</p>
+<h4 id="transmission-control-protocol-tcp">Transmission Control Protocol (TCP):</h4>
+<ul>
+<li><strong>Reliability</strong>: Ensures data is delivered accurately and in sequence, retransmitting lost packets.</li>
+<li><strong>Connection</strong>: Establishes a connection-oriented session between sender and receiver before data transfer.</li>
+<li><strong>Speed</strong>: Generally slower due to error-checking and connection establishment processes.</li>
+<li><strong>Use Cases</strong>: Suitable for applications where data integrity is crucial, such as web browsing (HTTP), email (SMTP), and file transfers (FTP).</li>
+</ul>
+<h4 id="user-datagram-protocol-udp">User Datagram Protocol (UDP):</h4>
+<ul>
+<li><strong>Reliability</strong>: Does not guarantee delivery, order, or error correction; suitable for applications that can tolerate some data loss.</li>
+<li><strong>Connection</strong>: Connectionless; sends data without establishing a session, reducing latency.</li>
+<li><strong>Speed</strong>: Faster due to the absence of connection setup and error-checking mechanisms.</li>
+<li><strong>Use Cases</strong>: Ideal for time-sensitive applications like live streaming, online gaming, and Voice over IP (VoIP), where speed is prioritized over reliability.</li>
+</ul>
+<h3 id="switching-mechanisms">3.5 Switching Mechanisms</h3>
+<p>Data transmission in networks utilizes different switching techniques:</p>
+<h4 id="packet-switching">Packet Switching:</h4>
+<ul>
+<li><strong>Method</strong>: Divides data into packets that are transmitted independently over the network.</li>
+<li><strong>Characteristics</strong>: Efficient use of network resources; packets may take different paths and arrive out of order, requiring reassembly.</li>
+<li><strong>Usage</strong>: Commonly used in modern networks, including the Internet, due to its flexibility and efficiency.</li>
+</ul>
+<h4 id="circuit-switching">Circuit Switching:</h4>
+<ul>
+<li><strong>Method</strong>: Establishes a dedicated communication path between sender and receiver for the duration of the session.</li>
+<li><strong>Characteristics</strong>: Provides consistent and ordered data transmission; inefficient for data networks due to resource dedication.</li>
+<li><strong>Usage</strong>: Traditionally used in telephone networks where a constant connection is required.</li>
+</ul>
+<h3 id="port-numbers">3.6 Port Numbers</h3>
+<p>Port numbers are essential for directing data to the correct application on a device.</p>
+<h4 id="common-port-numbers">Common Port Numbers:</h4>
+<ul>
+<li><strong>HTTP</strong>: Port 80; used for web traffic.</li>
+<li><strong>HTTPS</strong>: Port 443; used for secure web traffic.</li>
+<li><strong>FTP</strong>: Port 21; used for file transfers.</li>
+<li><strong>DNS</strong>: Port 53; used for domain name resolution.</li>
+<li><strong>SMTP</strong>: Port 25; used for sending emails.</li>
+</ul>
+<p>These standardized port numbers ensure that data is directed to the appropriate application services on a device.</p>
+<h3 id="tcp-and-udp-segment-structure">3.7 TCP and UDP Segment Structure</h3>
+<p>Understanding the structure of TCP and UDP segments is vital for analyzing data transmission.</p>
+<h4 id="tcp-segment-fields">TCP Segment Fields:</h4>
+<ul>
+<li><strong>Source Port</strong>: Identifies the sending application.</li>
+<li><strong>Destination Port</strong>: Identifies the receiving application.</li>
+<li><strong>Sequence Number</strong>: Indicates the position of the segment’s data in the overall message, ensuring correct sequencing.</li>
+<li><strong>Acknowledgment Number</strong>: Confirms receipt of data and indicates the next expected byte.</li>
+<li><strong>Flags</strong>: Control bits (e.g., SYN, ACK, FIN) that manage connection states and control information.</li>
+<li><strong>Checksum</strong>: Provides error detection to ensure data integrity.</li>
+</ul>
+</div>
+</body>
+
+</html>
